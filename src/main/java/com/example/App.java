@@ -9,7 +9,7 @@ public class App {
     public static int[] fix34(int[] nums) {
         int[] result = new int[nums.length];
         int[] others = new int[nums.length];
-        int position = 0, othersPosition = 0;
+        int othersPosition = 0;
 
         // put 3s and 4s in the right position
         // store others to fill the blanks later
@@ -25,10 +25,9 @@ public class App {
 
         // fill the blanks
         othersPosition = 0;
-        position = 0;
-        for (; position < result.length; position++) {
-            if (result[position] == 0) {
-                result[position] = others[othersPosition++];
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == 0) {
+                result[i] = others[othersPosition++];
             }
         }
         return result;
